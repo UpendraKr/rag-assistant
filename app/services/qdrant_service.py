@@ -24,6 +24,20 @@ class QdrantService:
             wait=True,
         )
 
+    def search(
+        self,
+        vector: list[float],
+        limit: int = 5,
+        query_filter=None,
+    ):
+
+        return self.client.query_points(
+            collection_name=self.collection_name,
+            query=vector,
+            query_filter=query_filter,
+            limit=limit,
+        ).points
+
     def delete_by_document(
         self,
         document_id: int,
