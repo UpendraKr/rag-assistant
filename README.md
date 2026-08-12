@@ -8,6 +8,8 @@ cd rag-assistant
 
 python3 -m venv .venv
 source .venv/bin/activate
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+
 
 pip install -r requirements.txt
 
@@ -28,3 +30,15 @@ docker ps
 1. Fast API          - http://localhost:8000
 2. Qdrant dashbaord  - http://localhost:6333/dashboard
 3. PostgreSQL and Redis don't have browser UIs by default
+
+
+# craete sql tables
+alembic revision --autogenerate -m "create documents table"
+alembic upgrade head
+
+docker exec -it rag-postgres psql -U postgres -d rag_db
+
+# run a data/scripts
+python -m scripts.init_qdrant
+python -m scripts.create_document
+python -m scripts.index_document

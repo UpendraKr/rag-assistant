@@ -13,9 +13,10 @@ class Settings(BaseSettings):
 
     REDIS_HOST: str
     REDIS_PORT: int
-
-    QDRANT_HOST: str
-    QDRANT_PORT: int
+    
+    QDRANT_URL: str
+    QDRANT_COLLECTION: str
+    VECTOR_SIZE: int
 
     OPENAI_API_KEY: str
 
