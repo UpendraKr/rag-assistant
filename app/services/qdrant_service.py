@@ -29,6 +29,7 @@ class QdrantService:
         vector: list[float],
         limit: int = 5,
         query_filter=None,
+        score_threshold: float | None = None,
     ):
 
         return self.client.query_points(
@@ -36,6 +37,7 @@ class QdrantService:
             query=vector,
             query_filter=query_filter,
             limit=limit,
+            score_threshold=score_threshold,
         ).points
 
     def delete_by_document(

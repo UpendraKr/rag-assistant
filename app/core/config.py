@@ -23,6 +23,7 @@ class Settings(BaseSettings):
     EMBEDDING_MODEL: str
 
     CHAT_MODEL: str
+    LLM_MODEL: str
 
     model_config = SettingsConfigDict(
         env_file=".env",

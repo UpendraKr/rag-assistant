@@ -44,3 +44,38 @@ python -m scripts.init_qdrant
 python -m scripts.create_document
 python -m scripts.index_document
 python -m scripts.test_retriever
+python -m scripts.test_context
+python -m scripts.test_rag
+
+# services we have
+PDFParser
+    ↓
+"Extract text"
+
+ChunkingService
+    ↓
+"Split text"
+
+EmbeddingService
+    ↓
+"Create vectors"
+
+QdrantService
+    ↓
+"Store/search vectors"
+
+Retriever
+    ↓
+"Find relevant chunks"
+
+ContextBuilder
+    ↓
+"Prepare context"
+
+LLMService
+    ↓
+"Generate answer"
+
+RAGService
+    ↓
+"Orchestrate the entire process"

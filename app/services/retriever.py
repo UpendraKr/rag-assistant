@@ -20,6 +20,7 @@ class Retriever:
         query: str,
         limit: int = 5,
         document_id: int | None = None,
+        score_threshold: float | None = None,
     ):
 
         query_vector = (
@@ -46,4 +47,5 @@ class Retriever:
             vector=query_vector,
             limit=limit,
             query_filter=query_filter,
+            score_threshold=score_threshold,
         )
