@@ -79,3 +79,55 @@ LLMService
 RAGService
     ↓
 "Orchestrate the entire process"
+
+# Understanding Qdrant Internals
+1. tables ---> collections
+2. rows   ---> Point
+               
+               Point
+                ├── ID           
+                ├── Vector    (Embedding)
+                └── Payload   (meta_data)
+
+                example :
+                  chunk text - FastAPI supports async programming.
+                  Embedding - [0.24, -0.81, 0.13, ...]
+                  meta_data - { "document": "fastapi.pdf", "page": 12, "section": "Async", "version": "1.0" }  
+
+                  Record in Qdrant:
+                     ID: 101
+
+                     Vector:
+                     [0.24, -0.81, ...]
+
+                     Payload:
+                     {
+                      document: fastapi.pdf,
+                      page:12,
+                      section:Async
+                     } 
+
+   Collection
+
+      │
+
+      ├── Point
+
+      │      ├── Vector
+
+      │      ├── Payload
+
+      │      └── ID
+
+      │
+
+      ├── Point
+
+      ├── Point
+
+      └── Point
+
+4. Distance Metrics:    How does Qdrant know two vectors are similar?
+   1. Cosine Similarity            (small angle  , high Similarity)
+   2. Dot Product
+   3. Euclidean Distance
