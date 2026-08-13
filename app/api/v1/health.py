@@ -2,11 +2,11 @@ from fastapi import APIRouter
 from app.core.config import settings
 
 router = APIRouter(
-    prefix="/api",
+    prefix="/api/v1/health",
 )
 
 
-@router.get("/health")
+@router.get("/")
 def health():
     return {
         "environment": settings.ENV,
