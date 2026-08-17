@@ -46,6 +46,9 @@ python -m scripts.index_document
 python -m scripts.test_retriever
 python -m scripts.test_context
 python -m scripts.test_rag
+python -m scripts.test_langchain_llm
+python -m scripts.test_langchain_retriever
+python -m scripts.test_langchain_rag
 
 # services we have
 PDFParser
