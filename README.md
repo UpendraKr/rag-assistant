@@ -50,7 +50,7 @@ python -m scripts.test_langchain_llm
 python -m scripts.test_langchain_retriever
 python -m scripts.test_langchain_rag
 
-# services we have
+# Custom services we have (Without langChain)
 PDFParser
     ↓
 "Extract text"
