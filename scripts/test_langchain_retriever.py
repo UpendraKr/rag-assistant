@@ -11,7 +11,7 @@ for document in documents:
     print("\n" + "=" * 60)
 
     print("CONTENT:")
-    print(document)
+    print(document.page_content)
 
     print("\nMETADATA:")
     print(document.metadata)
