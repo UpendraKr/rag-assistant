@@ -49,6 +49,8 @@ python -m scripts.test_rag
 python -m scripts.test_langchain_llm
 python -m scripts.test_langchain_retriever
 python -m scripts.test_langchain_rag
+python -m scripts.test_multi_query
+python -m scripts.test_multi_retrieval
 
 # Custom services we have (Without langChain)
 PDFParser
