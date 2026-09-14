@@ -47,9 +47,12 @@ python -m scripts.test_retriever
 python -m scripts.test_context
 python -m scripts.test_rag
 
+# langchain Rag
 python -m scripts.test_langchain_llm
 python -m scripts.test_langchain_retriever
 python -m scripts.test_langchain_rag
+
+# langChain Advance Rag
 python -m scripts.test_multi_query
 python -m scripts.test_multi_retrieval
 
